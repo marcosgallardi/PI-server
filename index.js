@@ -1,4 +1,5 @@
-const {uploadTemperaments} = require('./src/controllers/getTemperaments')
+require("dotenv").config();
+const { PORT } = process.env;
 
 //                       _oo0oo_
 //                      o8888888o
@@ -26,7 +27,7 @@ const { conn } = require("./src/db.js");
 
 conn.sync({ alter: true }).then(() => {
  //uploadTemperaments()
-  server.listen(3001, () => {
+  server.listen(PORT, () => {
     console.log("%s listening at 3001"); // eslint-disable-line no-console
   });
 });
