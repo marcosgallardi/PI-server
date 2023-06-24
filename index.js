@@ -1,3 +1,4 @@
+const {uploadTemperaments} = require('./src/controllers/getTemperaments')
 require("dotenv").config();
 const { PORT } = process.env;
 
@@ -26,7 +27,7 @@ const { conn } = require("./src/db.js");
 // Syncing all the models at once.
 
 conn.sync({ alter: true }).then(() => {
- //uploadTemperaments()
+ uploadTemperaments()
   server.listen(PORT, () => {
     console.log("%s listening at 3001"); // eslint-disable-line no-console
   });
